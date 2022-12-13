@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import {useSelector} from 'react-redux'
 
 const Drink = ({name, quantity, price }) => {
+  const cartState = useSelector(state => state.cartTasks)
+
+  console.log(cartState)
   let unitPrice = price.toFixed(2)
-  const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount).toFixed(2)} });
+  const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount).toFixed(2)}, name });
   
     const restAmount = () => {
   
