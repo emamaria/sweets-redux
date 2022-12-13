@@ -4,7 +4,10 @@ export const cartSlice = createSlice({
     name: "cartTasks",
     initialState: ["helado"],
     reducers: {
-
+      addCart: (state, action) => {
+        state.push(action.payload)
+      },
+      
     }
 })
 

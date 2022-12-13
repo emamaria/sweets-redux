@@ -3,6 +3,7 @@ import { drinkData } from '../../data/drinks'
 import Drink from './Drink'
 
 const Drinks = () => {
+ 
   return (
     <div className='drinks_screen'>
     <div className='sweets__container'>
