@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AddCartButton from '../cart/AddCartButton';
 // import {useSelector} from 'react-redux'
 
 const Sweet = ({ price, quantity, name}) => {
@@ -31,8 +32,9 @@ const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ r
         <button onClick={restAmount}>-</button>
         <p>{count.amount}</p>
          <button onClick={addAmount}>+</button>
+        
         </div>
-       
+        <AddCartButton/>
         </div>
         
     </div>
