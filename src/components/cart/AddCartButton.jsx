@@ -1,6 +1,6 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
-import {addCart, updateCart} from '../../features/cart/cartSlice.js'
+import {addCart, updateCartAdd} from '../../features/cart/cartSlice.js'
 import {useSelector} from 'react-redux'
 
 const AddCartButton = ({name, amount, totalPrice, price}) => {
@@ -16,8 +16,9 @@ const AddCartButton = ({name, amount, totalPrice, price}) => {
 
     // console.log("itemexiste", itemExist,name)
    //pongo ? para casos de undefied no de error .En caso de que exista
+   console.log("itemname", itemExist)
     if(itemExist?.name === name){
-      dispatch(updateCart({name, amount, totalPrice, price}))
+      dispatch(updateCartAdd({name, amount, totalPrice, price}))
     }else{
      
       // console.log(name, amount, totalPrice, price)

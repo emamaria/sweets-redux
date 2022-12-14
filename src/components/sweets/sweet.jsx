@@ -9,7 +9,7 @@ const Sweet = ({ price, quantity, name}) => {
 
   // console.log(cartState)
 
-  let unitPrice = price.toFixed(2)
+  let unitPrice = price
 const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount)}, name });
 
   const restAmount = () => {
