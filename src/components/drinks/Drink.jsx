@@ -32,7 +32,7 @@ const Drink = ({name, quantity, price }) => {
          <button onClick={addAmount}>+</button>
         
         </div>
-        <AddCartButton/>
+        <AddCartButton name={count.name} price={count.price} amount={count.amount} totalPrice={count.totalPrice()}/>
         </div>
        
     </div>

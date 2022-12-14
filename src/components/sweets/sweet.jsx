@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react'
 import AddCartButton from '../cart/AddCartButton';
 // import {useSelector} from 'react-redux'
@@ -21,6 +22,7 @@ const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ r
 
   const addAmount = () => { 
     setCount({...count, amount: count.amount + 1})
+   
   }
   return (
     <div className='sweet_container'>
@@ -32,9 +34,8 @@ const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ r
         <button onClick={restAmount}>-</button>
         <p>{count.amount}</p>
          <button onClick={addAmount}>+</button>
-        
-        </div>
-        <AddCartButton/>
+         </div>
+        <AddCartButton name={count.name} price={count.price} amount={count.amount} totalPrice={count.totalPrice()}/>
         </div>
         
     </div>
