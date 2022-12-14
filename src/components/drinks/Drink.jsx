@@ -7,7 +7,7 @@ const Drink = ({name, quantity, price }) => {
 
   // console.log(cartState)
   let unitPrice = price.toFixed(2)
-  const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount).toFixed(2)}, name });
+  const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount)}, name });
   
     const restAmount = () => {
   
@@ -25,7 +25,7 @@ const Drink = ({name, quantity, price }) => {
         <img src={`/assets/drinks/${name.split(" ").join("_")}.jpg`} alt={name}/>
         <h3>{name[0].toUpperCase() + name.substring(1)}</h3>
         <div className="sweet_total_container">
-        <p className='sweet_price'>{count.totalPrice()}€</p>
+        <p className='sweet_price'>{count.totalPrice().toFixed(2)}€</p>
         <div className="sweet_amount" >
         <button onClick={restAmount}>-</button>
         <p>{count.amount}</p>
