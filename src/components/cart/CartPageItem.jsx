@@ -2,7 +2,7 @@ import React from 'react'
 import {useDispatch} from 'react-redux'
 import { restFromTotal, addToTotal} from '../../features/cart/cartSlice'
 
-const CartPageItem = ({price, totalPrice, name, amount}) => {
+const CartPageItem = ({price, totalPrice, name, amount, category}) => {
 
    
     const dispatch = useDispatch()
@@ -18,7 +18,7 @@ const CartPageItem = ({price, totalPrice, name, amount}) => {
     <div>
        
         <div>
-          {name && <img src={`/assets/sweets/${name.split(" ").join("_")}.jpg`} alt={name}/>}
+          {name && <img src={`/assets/${category}/${name.split(" ").join("_")}.jpg`} alt={name}/>}
             <h1>{name}</h1>
         </div>
         <div>

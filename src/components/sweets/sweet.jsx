@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 import AddCartButton from '../cart/AddCartButton';
 // import {useSelector} from 'react-redux'
 
-const Sweet = ({ price, quantity, name}) => {
+const Sweet = ({ price, quantity, name, category}) => {
 
   // const cartState = useSelector(state => state.cartTasks)
 
   // console.log(cartState)
 
   let unitPrice = price
-const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount)}, name });
+const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ return (this.price*this.amount)}, name , category});
 
   const restAmount = () => {
 
@@ -35,7 +35,7 @@ const [count, setCount] = useState({price: unitPrice, amount: 1, totalPrice(){ r
         <p>{count.amount}</p>
          <button onClick={addAmount}>+</button>
          </div>
-        <AddCartButton name={count.name} price={count.price} amount={count.amount} totalPrice={count.totalPrice()}/>
+        <AddCartButton name={count.name} price={count.price} amount={count.amount} totalPrice={count.totalPrice()} category={count.category}/>
         </div>
         
     </div>

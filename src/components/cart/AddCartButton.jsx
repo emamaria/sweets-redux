@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import {addCart, updateCartAdd} from '../../features/cart/cartSlice.js'
 import {useSelector} from 'react-redux'
 
-const AddCartButton = ({name, amount, totalPrice, price}) => {
+const AddCartButton = ({name, amount, totalPrice, price, category}) => {
  const cartState = useSelector(state => state.cartTasks)
 
   
@@ -22,7 +22,7 @@ const AddCartButton = ({name, amount, totalPrice, price}) => {
     }else{
      
       // console.log(name, amount, totalPrice, price)
-      dispatch(addCart({name, amount, totalPrice, price}))
+      dispatch(addCart({name, amount, totalPrice, price, category}))
      
     }
      

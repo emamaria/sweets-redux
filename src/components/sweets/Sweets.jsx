@@ -25,7 +25,7 @@ const [inputValue, setInputValue] = useState("");
     <input type="text" placeholder="write the sweet name" value={inputValue} onChange={handleChange}/>
     <div className='sweets__container'>
       {  sweetData.filter(data => data.name.toLowerCase().includes(inputValue.toLowerCase())).map( (data, index) => {
-          return <Sweet key={index}  name={data.name} price={data.price} quantity={data.size}/>
+          return <Sweet key={index}  name={data.name} price={data.price} quantity={data.size}  category={data.category}/>
         })
       }
       

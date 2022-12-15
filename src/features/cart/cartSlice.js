@@ -16,17 +16,28 @@ export const cartSlice = createSlice({
         }
       }, 
      restFromTotal: (state, action) =>  {
+      console.log("state", state)
+         
         let itemExist = state.find(item => item.name === action.payload.name)
+        console.log("payload name", action.payload.name)
+        console.log("restitem", itemExist)
         if(itemExist && itemExist.amount > 0){
+          console.log("restitem", itemExist)
           itemExist.amount -= 1
           itemExist.totalPrice -= action.payload.price
           if(itemExist.amount === 0){
-            state.splice(state.indexOf(itemExist.name), 1)
+            console.log("index", state.indexOf(itemExist.name))
+            if(state.indexOf(itemExist.name) >= 0){
+              state.splice(state.indexOf(itemExist.name), 1)
+            }
+           
           }
         }
       },
       addToTotal: (state, action) =>  {
-        let itemExist = state.find(item => item.name === action.payload.name)
+       
+        let itemExist =  state.find(item => item.name === action.payload.name)
+     
         if(itemExist){
           itemExist.amount += 1
           itemExist.totalPrice += action.payload.price

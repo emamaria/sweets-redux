@@ -10,7 +10,7 @@ const CartPage = () => {
     <div className='cartPage_container'>
       { cartState.map((item, index) => {
         return <CartPageItem key={index} name={item.name} totalPrice={item.totalPrice} amount={item.amount} 
-        price={item.price}/>
+        price={item.price} category={item.category}/>
       } )}
     </div>
   )

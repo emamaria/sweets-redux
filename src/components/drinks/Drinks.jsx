@@ -8,7 +8,7 @@ const Drinks = () => {
     <div className='drinks_screen'>
     <div className='sweets__container'>
       {  drinkData.map( (data, index) => {
-          return <Drink key={index}  name={data.name} price={data.price} quantity={data.size}/>
+          return <Drink key={index}  name={data.name} price={data.price} quantity={data.size} category={data.category}/>
         })
       }
       
