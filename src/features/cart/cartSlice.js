@@ -21,16 +21,20 @@ export const cartSlice = createSlice({
         let itemExist = state.find(item => item.name === action.payload.name)
         console.log("payload name", action.payload.name)
         console.log("restitem", itemExist)
-        if(itemExist && itemExist.amount > 0){
+        if(itemExist.name === action.payload.name && itemExist.amount > 0){
           console.log("restitem", itemExist)
           itemExist.amount -= 1
           itemExist.totalPrice -= action.payload.price
+
+             console.log("cantidaditem", itemExist.amount)
           if(itemExist.amount === 0){
+            //sale como que el item no existe
+                  console.log("cantiaditem2", itemExist.amount )
+          //  return  state.filter(item => item.name !== itemExist.name)
             console.log("index", state.indexOf(itemExist.name))
-            if(state.indexOf(itemExist.name) >= 0){
+            //buscar el indice de ese objeto en el array y pasarlo al splice
               state.splice(state.indexOf(itemExist.name), 1)
-            }
-           
+            
           }
         }
       },
