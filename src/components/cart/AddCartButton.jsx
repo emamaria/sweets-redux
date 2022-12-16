@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {addCart, updateCartAdd} from '../../features/cart/cartSlice.js'
 import {useSelector} from 'react-redux'
 
 const AddCartButton = ({name, amount, totalPrice, price, category}) => {
+
+  const [color,setColor]=useState('#65C18C');
+  const [textColor,setTextColor]=useState('white');
+
  const cartState = useSelector(state => state.cartTasks)
 
   
   const dispatch = useDispatch()
 
   
-  
   const AddItemToCart = () => {
+
+    // customStyle.backgroundColor = "white"
     const itemExist = cartState.find(item => item.name === name)
 
     // console.log("itemexiste", itemExist,name)
@@ -32,7 +37,7 @@ const AddCartButton = ({name, amount, totalPrice, price, category}) => {
  
   return (
     
-    <button onClick={AddItemToCart} className='addCartButton'> Add to cart
+    <button onClick={AddItemToCart} onMouseDown={()=>{ setColor("white");setTextColor('black'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('white'); }}style={{background:color,color:textColor}}  className='addCartButton'> Add to cart
     </button>
   
   )
