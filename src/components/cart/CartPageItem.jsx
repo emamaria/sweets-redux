@@ -15,18 +15,20 @@ const CartPageItem = ({price, totalPrice, name, amount, category}) => {
         dispatch(addToTotal({price, totalPrice, name, amount}))
     }
   return (
-    <div>
-       
-        <div>
-          {name && <img src={`/assets/${category}/${name.split(" ").join("_")}.jpg`} alt={name}/>}
+    <div className="cartItem_container">
+       <div className='img_container'>
+       {name && <img src={`/assets/${category}/${name.split(" ").join("_")}.jpg`} alt={name}/>}
+       </div>
+        <div className="cartDetail_container">
             <h1>{name}</h1>
-        </div>
-        <div>
-        <h1>{totalPrice?.toFixed(2)}</h1>
-        <h1>{price}</h1>
-        <button onClick={restAmountTotal}>-</button>
-        <p>{amount}</p>
-         <button onClick={addAmountTotal}>+</button>
+            <h1>Price: {price}</h1>
+            <h1>Quantity: {amount}</h1>
+            <h1>Total price: {totalPrice?.toFixed(2)}</h1>
+            <div className="counter_container">
+            <button onClick={restAmountTotal}>-</button>
+            <p>{amount}</p>
+            <button onClick={addAmountTotal}>+</button>
+            </div>
         </div>
     </div>
   )

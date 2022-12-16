@@ -1,6 +1,19 @@
 .cartPage_container{
     margin: 100px;
     background-color: white;
+   
     
 
 }
+
+@media (max-width:600px) {
+ 
+    .cartPage_container{
+        margin: 30px;
+        background-color: white;
+       
+        align-items: center;
+    
+    }
+
+  }
