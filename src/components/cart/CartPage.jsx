@@ -15,8 +15,8 @@ const CartPage = () => {
         return <CartPageItem key={index} name={item.name} totalPrice={item.totalPrice} amount={item.amount} 
         price={item.price} category={item.category}/>
       } )}
-      { (TotalItems>0)&&<h1 className="totalItems">Total Items:{TotalItems}</h1>}
-     { (TotalPurchase>0)&&<h1 className="totalPurchase">Total purchase:{TotalPurchase.toFixed(2)}€</h1>}
+      <h1 className="totalItems">Total Items:{TotalItems}</h1>
+     <h1 className="totalPurchase">Total purchase:{TotalPurchase.toFixed(2)}€</h1>
     </div>
   )
 }
