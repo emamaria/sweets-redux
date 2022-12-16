@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { sweetData } from '../../data/sweets'
 import Sweet from './sweet'
+
 const Sweets = () => {
-
- 
-
 
 const [inputValue, setInputValue] = useState("");
 
