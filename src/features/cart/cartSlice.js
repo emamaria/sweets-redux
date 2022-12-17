@@ -47,11 +47,15 @@ export const cartSlice = createSlice({
           itemExist.amount += 1
           itemExist.totalPrice += action.payload.price
         }
+      },
+      deleteProduct: (state, action) =>  {
+          console.log("deleteProduct", action)
+          return state.filter( item => item.name !== action.payload.name)
       }
       
     }
 })
-   export const  {addCart, updateCartAdd, restFromTotal, addToTotal} =  cartSlice.actions
+   export const  {addCart, updateCartAdd, restFromTotal, addToTotal, deleteProduct} =  cartSlice.actions
 
 
 export default cartSlice.reducer

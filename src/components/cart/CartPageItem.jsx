@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
-import { restFromTotal, addToTotal} from '../../features/cart/cartSlice'
+import { restFromTotal, addToTotal, deleteProduct} from '../../features/cart/cartSlice'
 
 const CartPageItem = ({price, totalPrice, name, amount, category}) => {
 
@@ -16,6 +16,10 @@ const CartPageItem = ({price, totalPrice, name, amount, category}) => {
 
     const addAmountTotal = () => {
         dispatch(addToTotal({price, totalPrice, name, amount}))
+    }
+
+    const deleteFromCart = () => {
+      dispatch(deleteProduct({name}))
     }
   return (
     <div className="cartItem_container">
@@ -33,7 +37,7 @@ const CartPageItem = ({price, totalPrice, name, amount, category}) => {
             <p>{amount}</p>
             <button onClick={addAmountTotal}>+</button>
             </div>
-            <button className='deleteButton' onMouseDown={()=>{ setColor("white");setTextColor('white'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('black'); }}style={{background:color,color:textColor}}  >Delete</button>
+            <button className='deleteButton' onClick={deleteFromCart} onMouseDown={()=>{ setColor("white");setTextColor('white'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('black'); }}style={{background:color,color:textColor}}  >Delete</button>
             </div>
            
         </div>
