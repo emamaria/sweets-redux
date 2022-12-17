@@ -13,7 +13,7 @@ const Header = () => {
 
     <header className='header'>
         <h1>Sweets and Drinks</h1>
-        {(path!== "/")&&<CartLink/>}
+        {(path!== "/" && path!== "/cart")&&<CartLink/>}
         
     </header>
 

@@ -11,6 +11,7 @@ const CartPage = () => {
   let TotalItems = cartState.reduce( (acc, cur) => acc + cur.amount, initialValue)
   return (
     <div className='cartPage_container'>
+     <h1 className='cartPage_container_title'>User Shopping Cart Info</h1>
       { cartState.map((item, index) => {
         return <CartPageItem key={index} name={item.name} totalPrice={item.totalPrice} amount={item.amount} 
         price={item.price} category={item.category}/>

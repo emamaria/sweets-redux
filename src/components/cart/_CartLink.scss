@@ -5,10 +5,16 @@
 
     padding: 15px;
    
-   position: absolute;
-   bottom: 25px;
-   right: 75px;
+   position: fixed;
+   z-index:2;
+   top: 75px;
+   right: 45px;
 }
+
+.cart_link:hover{
+        background-color: white;
+    
+    }
 
 .cart__navlink{
     
@@ -17,3 +23,17 @@
 
     
 }
+
+@media (max-width:600px) {
+ 
+        .cart_link{
+                font-size: 25px;
+                img{
+                   width: 35px
+                }
+              right: 20px;
+              top: 110px;
+            }
+    
+      }
+    
