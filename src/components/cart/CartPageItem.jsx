@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import { restFromTotal, addToTotal} from '../../features/cart/cartSlice'
 
 const CartPageItem = ({price, totalPrice, name, amount, category}) => {
+
+  const [color,setColor]=useState('#65C18C');
+  const [textColor,setTextColor]=useState('black');
 
    
     const dispatch = useDispatch()
@@ -30,7 +33,7 @@ const CartPageItem = ({price, totalPrice, name, amount, category}) => {
             <p>{amount}</p>
             <button onClick={addAmountTotal}>+</button>
             </div>
-            <button className='deleteButton'>Delete</button>
+            <button className='deleteButton' onMouseDown={()=>{ setColor("white");setTextColor('white'); }} onMouseUp={()=>{ setColor("#65C18C");setTextColor('black'); }}style={{background:color,color:textColor}}  >Delete</button>
             </div>
            
         </div>
