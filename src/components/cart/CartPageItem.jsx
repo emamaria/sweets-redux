@@ -24,11 +24,15 @@ const CartPageItem = ({price, totalPrice, name, amount, category}) => {
             <h1>Price: {price.toFixed(2)}</h1>
             <h1>Quantity: {amount}</h1>
             <h1>Total price: {totalPrice?.toFixed(2)}</h1>
+            <div  className='buttons_container'>
             <div className="counter_container">
             <button onClick={restAmountTotal}>-</button>
             <p>{amount}</p>
             <button onClick={addAmountTotal}>+</button>
             </div>
+            <button className='deleteButton'>Delete</button>
+            </div>
+           
         </div>
     </div>
   )
